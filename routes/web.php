@@ -41,7 +41,14 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 });
 
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware(['auth', 'verified']);
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+
+});
 Route::get('/donation', [AdminDonationController::class, 'index'])->name('donation.index')->middleware(['auth', 'verified']);
 Route::put('/donation/{donation_id}', [AdminDonationController::class, 'approve'])->name('donation.approve')->middleware(['auth', 'verified']);
 
