@@ -6,7 +6,7 @@
             <h2 class="text-2xl font-bold mb-4">Your Donations</h2>
         </div>
         <div>
-            <a
+            <a href="{{ route('donator.donate.create') }}"
                 class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg shadow hover:bg-purple-700 transition duration-300">
                 Make a Donation
             </a>

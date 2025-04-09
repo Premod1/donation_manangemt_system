@@ -45,6 +45,8 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index')->mid
 Route::get('/donation', [AdminDonationController::class, 'index'])->name('donation.index')->middleware(['auth', 'verified']);
 Route::put('/donation/{donation_id}', [AdminDonationController::class, 'approve'])->name('donation.approve')->middleware(['auth', 'verified']);
 
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -52,10 +54,13 @@ Route::middleware('auth')->group(function () {
 });
 
 
+
+
 Route::prefix('donator')->group(function () {
     Route::get('/dashboard', [DonatorController::class, 'dashboard'])->name('donator.dashboard');
     Route::get('/donate', [DonatorController::class, 'index'])->name('donator.donate.index');
-    // Route::get('/donate', [DonatorController::class, 'create'])->name('donator.donate.create');
+    Route::get('/donate/create', [DonatorController::class, 'create'])->name('donator.donate.create');
+    Route::post('/donate', [DonatorController::class, 'store'])->name('donator.donate.store');
 })->middleware(['auth', 'verified']);
 
 Route::get('donations', [DonationController::class, 'index'])->name('donations.index');
