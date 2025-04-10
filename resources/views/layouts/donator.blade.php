@@ -45,8 +45,8 @@
                         Profile
                     </button>
                     <div id="profileDropdown" class="absolute right-0 mt-2 w-48 bg-white shadow-md rounded-md hidden">
-                        <a href="{{ route('donator.dashboard') }}" class="block px-4 py-2 text-gray-700">Profile</a>
-                        <a href="{{ route('donator.dashboard') }}" class="block px-4 py-2 text-gray-700">Settings</a>
+                        {{-- <a href="{{ route('donator.dashboard') }}" class="block px-4 py-2 text-gray-700">Profile</a>
+                        <a href="{{ route('donator.dashboard') }}" class="block px-4 py-2 text-gray-700">Settings</a> --}}
                         <form action="{{ route('logout') }}" method="POST" class="block">
                             @csrf
                             <button type="submit" class="w-full px-4 py-2 text-gray-700 text-left">Logout</button>

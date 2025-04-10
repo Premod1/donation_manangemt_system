@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDonationController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ProfileController;
@@ -23,9 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index')->middleware(['auth', 'verified']);
 
