@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id('donation_id');
             $table->unsignedBigInteger('user_id');
-            $table->decimal('amount', 10, 2)->nullable();
+            $table->text('description')->nullable();
             $table->timestamp('donation_date');
             $table->enum('status', ['pending', 'completed']);
             $table->unsignedBigInteger('project_id')->nullable();
