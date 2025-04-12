@@ -30,7 +30,7 @@
      <!-- Responsive-->
      <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
      <!-- fevicon -->
-     <link rel="icon" href="{{ asset('frontend/images/fb-icon.png') }}" type="image/gif" />
+     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/gif" />
      <!-- Scrollbar Custom CSS -->
      <link rel="stylesheet" href="{{ asset('frontend/css/jquery.mCustomScrollbar.min.css') }}">
      <!-- Tweaks for older IEs-->
@@ -176,11 +176,9 @@
             <div class="container">
                <div class="row">
                   <div class="col-sm-8">
-                     <h2 class="about_taital">about Chrity</h2>
-                     <p class="about_text">many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youmany variations of passages of Lorem Ipsum
-                        available, but the majority have suffered
-                        alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you many
-                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, byinjected humour, or randomised words which don't look even slightly believable. If you
+                     <h2 class="about_taital">About Donation</h2>
+                     <p class="about_text">
+                        Every act of giving makes a difference. Donations are a powerful way to support meaningful causes and help those in need. Whether it’s a small contribution or a generous gift, your donation can bring hope, provide essential resources, and create lasting change in someone’s life.
                      </p>
                      <div class="readmore_bt"><a href="#">Read more</a></div>
                   </div>
@@ -197,7 +195,7 @@
            <div class="row">
               <div class="col-sm-12">
                  <h1 class="mission_taital">Mission causes</h1>
-                 <p class="mission_text">going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+                 <p class="mission_text">Our mission is to uplift lives by connecting kindness with need. We are committed to creating a world where compassion drives change—empowering communities, supporting the vulnerable, and spreading hope through meaningful acts of giving. </p>
               </div>
            </div>
         </div>
@@ -452,18 +450,18 @@
                         <div class="footer_menu_left">
                            <div class="footer_menu">
                               <ul>
-                                 <li><a href="index.html">Home</a></li>
-                                 <li><a href="donate.html">Donate</a></li>
-                                 <li><a href="contact.html">Contact us</a></li>
+                                 <li><a href="#">Home</a></li>
+                                 <li><a href="#">Donate</a></li>
+                                 <li><a href="#">Contact us</a></li>
                               </ul>
                            </div>
                         </div>
                         <div class="footer_menu_right">
                            <div class="footer_menu">
                               <ul>
-                                 <li><a href="about.html">About</a></li>
-                                 <li><a href="news.html">News</a></li>
-                                 <li><a href="mission.html">Our Mission</a></li>
+                                 <li><a href="#">About</a></li>
+                                 <li><a href="#">News</a></li>
+                                 <li><a href="#">Our Mission</a></li>
                               </ul>
                            </div>
                         </div>
