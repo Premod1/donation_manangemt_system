@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminDonationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\DonatorUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
@@ -67,6 +68,8 @@ Route::prefix('donator')->group(function () {
     Route::get('/donate', [DonatorController::class, 'index'])->name('donator.donate.index');
     Route::get('/donate/create', [DonatorController::class, 'create'])->name('donator.donate.create');
     Route::post('/donate', [DonatorController::class, 'store'])->name('donator.donate.store');
+
+    Route::get('users', [DonatorUserController::class, 'index'])->name('donator.users.index');
 })->middleware(['auth', 'verified']);
 
 Route::get('donations', [DonationController::class, 'index'])->name('donations.index');

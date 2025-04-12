@@ -30,7 +30,7 @@
      <!-- Responsive-->
      <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
      <!-- fevicon -->
-     <link rel="icon" href="{{ asset('frontend/images/fb-icon.png') }}" type="image/gif" />
+     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/gif" />
      <!-- Scrollbar Custom CSS -->
      <link rel="stylesheet" href="{{ asset('frontend/css/jquery.mCustomScrollbar.min.css') }}">
      <!-- Tweaks for older IEs-->
@@ -43,6 +43,22 @@
      <link rel="stylesheet" href="{{ asset('frontend/css/owl.theme.default.min.css') }}">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
+
+<style>
+    .donate_btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e91e63;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.donate_btn:hover {
+    background-color: #c2185b;
+}
+</style>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -73,8 +89,9 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="search_icon"><a href="#"><img src="{{ asset('frontend/images/search-icon.png') }}"></a></div>
-                    <button class="donate_btn" type="submit">Donate Now</button>
+                    {{-- <div class="search_icon"><a href="#"><img src="{{ asset('frontend/images/search-icon.png') }}"></a></div> --}}
+                    {{-- <button class="donate_btn" type="submit">Donate Now</button> --}}
+                    <a href="{{ route('login') }}" class="donate_btn">Login</a>
                 </form>
             </div>
     </nav>
@@ -176,11 +193,9 @@
             <div class="container">
                <div class="row">
                   <div class="col-sm-8">
-                     <h2 class="about_taital">about Chrity</h2>
-                     <p class="about_text">many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youmany variations of passages of Lorem Ipsum
-                        available, but the majority have suffered
-                        alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you many
-                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, byinjected humour, or randomised words which don't look even slightly believable. If you
+                     <h2 class="about_taital">About Donation</h2>
+                     <p class="about_text">
+                        Every act of giving makes a difference. Donations are a powerful way to support meaningful causes and help those in need. Whether it’s a small contribution or a generous gift, your donation can bring hope, provide essential resources, and create lasting change in someone’s life.
                      </p>
                      <div class="readmore_bt"><a href="#">Read more</a></div>
                   </div>
@@ -191,123 +206,6 @@
             </div>
          </div>
         <!-- about section end -->
-         <!-- mission section start -->
-      <div class="mission_section layout_padding">
-        <div class="container">
-           <div class="row">
-              <div class="col-sm-12">
-                 <h1 class="mission_taital">Mission causes</h1>
-                 <p class="mission_text">going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
-              </div>
-           </div>
-        </div>
-        <div class="mission_section_2">
-           <div class="row">
-              <div class="offset-md-2"></div>
-              <div class="col-md-5">
-                 <div class="container_main">
-                    <img src="{{ asset('frontend/images/img-1.png') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                       <div class="text">
-                          <h4 class="some_text">whichalteration in some </h4>
-                          <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
-                          <div class="btn_main">
-                             <div class="donate_bt"><a href="#">Read More</a></div>
-                             <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-              <div class="col-md-5">
-                 <div class="container_main">
-                    <img src="{{ asset('frontend/images/img-2.png') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                       <div class="text">
-                          <h4 class="some_text">whichalteration in some </h4>
-                          <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
-                          <div class="btn_main">
-                             <div class="donate_bt"><a href="#">Read More</a></div>
-                             <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <div class="mission_section_2">
-           <div class="row">
-              <div class="col-md-5">
-                 <div class="container_main">
-                    <img src="{{ asset('frontend/images/img-3.png') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                       <div class="text">
-                          <h4 class="some_text">whichalteration in some </h4>
-                          <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
-                          <div class="btn_main">
-                             <div class="donate_bt"><a href="#">Read More</a></div>
-                             <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-              <div class="col-md-5">
-                 <div class="container_main">
-                    <img src="{{ asset('frontend/images/img-4.png') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                       <div class="text">
-                          <h4 class="some_text">whichalteration in some </h4>
-                          <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
-                          <div class="btn_main">
-                             <div class="donate_bt"><a href="#">Read More</a></div>
-                             <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-              <div class="offset-md-2"></div>
-           </div>
-        </div>
-        <div class="mission_section_2">
-           <div class="row">
-              <div class="offset-md-2"></div>
-              <div class="col-md-5">
-                 <div class="container_main">
-                    <img src="{{ asset('frontend/images/img-5.png') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                       <div class="text">
-                          <h4 class="some_text">whichalteration in some </h4>
-                          <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
-                          <div class="btn_main">
-                             <div class="donate_bt"><a href="#">Read More</a></div>
-                             <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-              <div class="col-md-5">
-                 <div class="container_main">
-                    <img src="{{ asset('frontend/images/img-6.png') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                       <div class="text">
-                          <h4 class="some_text">whichalteration in some </h4>
-                          <p class="alteration_text">Alteration in some form, by injected humour, or randomised words whichalteration in some form, by injected humour, or randomised words which</p>
-                          <div class="btn_main">
-                             <div class="donate_bt"><a href="#">Read More</a></div>
-                             <div class="donate_bt"><a href="donate.html">Donate Now</a></div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
-           <!-- mission section end -->
 
              <!-- news section start -->
       <div class="news_section layout_padding">
@@ -452,18 +350,18 @@
                         <div class="footer_menu_left">
                            <div class="footer_menu">
                               <ul>
-                                 <li><a href="index.html">Home</a></li>
-                                 <li><a href="donate.html">Donate</a></li>
-                                 <li><a href="contact.html">Contact us</a></li>
+                                 <li><a href="#">Home</a></li>
+                                 <li><a href="#">Donate</a></li>
+                                 <li><a href="#">Contact us</a></li>
                               </ul>
                            </div>
                         </div>
                         <div class="footer_menu_right">
                            <div class="footer_menu">
                               <ul>
-                                 <li><a href="about.html">About</a></li>
-                                 <li><a href="news.html">News</a></li>
-                                 <li><a href="mission.html">Our Mission</a></li>
+                                 <li><a href="#">About</a></li>
+                                 <li><a href="#">News</a></li>
+                                 <li><a href="#">Our Mission</a></li>
                               </ul>
                            </div>
                         </div>
