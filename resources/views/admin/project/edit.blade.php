@@ -6,7 +6,7 @@
                     <h2 class="text-2xl font-bold mb-4">Edit Project</h2>
 
                     <form action="{{ route('admin.projects.update', $project->project_id) }}" method="POST"
-                        class="space-y-6">
+                        enctype="multipart/form-data" class="space-y-6">
                         @csrf
                         @method('PUT')
 
@@ -78,6 +78,26 @@
                                 <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
                             @enderror
                         </div>
+
+                        <!-- Project Image -->
+                        <div>
+                            <label for="image" class="block font-medium text-sm text-gray-700">Upload New Image
+                                (optional)</label>
+                            <input type="file" name="image" id="image"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            @error('image')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
+
+                            @if ($project->image)
+                                <div class="mt-4">
+                                    <p class="font-medium text-sm text-gray-700 mb-2">Current Image:</p>
+                                    <img src="{{ asset('storage/' . $project->image) }}" alt="Current Project Image"
+                                        class="w-48 rounded shadow border">
+                                </div>
+                            @endif
+                        </div>
+
 
                         <!-- Submit -->
                         <div>
