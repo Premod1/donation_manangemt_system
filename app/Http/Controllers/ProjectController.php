@@ -24,8 +24,14 @@ class ProjectController extends Controller
             'target_amount' => 'required|numeric|min:0',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
+            'image' => 'nullable|max:2048',
         ]);
         $progress = $this->calculateProgress(0, $request->target_amount);
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('projects', 'public');
+        }
 
         $project = new Project();
         $project->name = $request->name;
@@ -35,6 +41,7 @@ class ProjectController extends Controller
         $project->start_date = $request->start_date;
         $project->end_date = $request->end_date;
         $project->progress = $progress;
+        $project->image = $imagePath;
         $project->save();
         return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
@@ -56,8 +63,19 @@ class ProjectController extends Controller
             'target_amount' => 'required|numeric|min:0',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
+            'image' => 'nullable|max:2048',
         ]);
         $progress = $this->calculateProgress($project->current_amount, $request->target_amount);
+
+        if ($request->hasFile('image')) {
+            // Delete old image
+            if ($project->image && \Storage::disk('public')->exists($project->image)) {
+                \Storage::disk('public')->delete($project->image);
+            }
+
+            // Store new image and update path
+            $project->image = $request->file('image')->store('projects', 'public');
+        }
 
         $project->name = $request->name;
         $project->description = $request->description;

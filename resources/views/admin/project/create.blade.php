@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2 class="text-2xl font-bold mb-4">Create Projects</h2>
 
-                    <form action="{{ route('admin.projects.store') }}" method="POST" class="space-y-6">
+                    <form action="{{ route('admin.projects.store') }}" method="POST"  enctype="multipart/form-data" class="space-y-6">
                         @csrf
 
                         <!-- Name -->
@@ -77,6 +77,17 @@
                                 <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
                             @enderror
                         </div>
+
+                        <!-- Project Image -->
+                        <div>
+                            <label for="image" class="block font-medium text-sm text-gray-700">Project Image</label>
+                            <input type="file" name="image" id="image"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            @error('image')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+
 
                         <!-- Submit -->
                         <div>
