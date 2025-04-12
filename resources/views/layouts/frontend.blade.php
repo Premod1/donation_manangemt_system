@@ -44,6 +44,22 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
 
+<style>
+    .donate_btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e91e63;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.donate_btn:hover {
+    background-color: #c2185b;
+}
+</style>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand"><a href="index.html"><img src="{{ asset('frontend/images/logo.png') }}"></a>
@@ -73,8 +89,9 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="search_icon"><a href="#"><img src="{{ asset('frontend/images/search-icon.png') }}"></a></div>
-                    <button class="donate_btn" type="submit">Donate Now</button>
+                    {{-- <div class="search_icon"><a href="#"><img src="{{ asset('frontend/images/search-icon.png') }}"></a></div> --}}
+                    {{-- <button class="donate_btn" type="submit">Donate Now</button> --}}
+                    <a href="{{ route('login') }}" class="donate_btn">Login</a>
                 </form>
             </div>
     </nav>
