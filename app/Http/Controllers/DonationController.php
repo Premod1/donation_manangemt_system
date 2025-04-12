@@ -6,6 +6,7 @@ use App\Models\Donation;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 
 class DonationController extends Controller
@@ -34,6 +35,8 @@ class DonationController extends Controller
             ]);
             $role = Role::findByName('Donator');
             $user->assignRole($role);
+
+            Auth::login($user);
 
             $donation = new Donation();
             $donation->user_id = $user->id;
