@@ -28,6 +28,13 @@
                Donations List
             </a>
         </li>
+        <li>
+            <a href="{{ route('donator.users.index') }}"
+               class="block w-full text-left px-4 py-2 rounded-md transition-all duration-200
+                      {{ request()->routeIs('donator.users.index') ? 'bg-purple-800' : 'hover:bg-purple-700' }}">
+               User Details
+            </a>
+        </li>
     </ul>
 </div>
 
