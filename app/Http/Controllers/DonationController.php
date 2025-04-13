@@ -19,6 +19,7 @@ class DonationController extends Controller
 
     public function store(Request $request)
     {
+        \Log::info($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
