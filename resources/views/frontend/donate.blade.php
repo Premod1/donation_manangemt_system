@@ -40,7 +40,7 @@
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <option value="">Select a project</option>
                 @foreach ($projects as $pro)
-                    <option value="{{ $pro->id }}" {{ $pro->id == $project->id ? 'selected' : '' }}>
+                    <option value="{{ $pro->project_id }}" {{ $pro->project_id == $project->project_id ? 'selected' : '' }}>
                         {{ $pro->name }}
                     </option>
                 @endforeach
